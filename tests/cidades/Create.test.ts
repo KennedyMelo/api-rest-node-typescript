@@ -20,4 +20,13 @@ describe('Cidades - Create', () => {
     expect(res1.statusCode).toEqual(StatusCodes.BAD_REQUEST);
     expect(res1.body).toHaveProperty('errors.body.nome');
   });
+
+  it('Deve preencher os campos', async () => {
+    const res1 = await testServer
+      .post('/cidades')
+      .send({ nom: 'Caixa'});
+
+    expect(res1.statusCode).toEqual(StatusCodes.BAD_REQUEST);
+    expect(res1.body).toHaveProperty('errors.body.nome');
+  });
 });
