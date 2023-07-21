@@ -3,7 +3,7 @@ import { testServer } from '../jest.setup';
 
 
 describe('Cidades - UpdateById', () => {
-  it('Atauliza registro', async () => {
+  it('Atualiza registro', async () => {
     const res1 = await testServer
       .post('/cidades')
       .send({ nome: 'Caxias do Sul'});

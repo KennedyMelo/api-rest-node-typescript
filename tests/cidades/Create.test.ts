@@ -21,7 +21,7 @@ describe('Cidades - Create', () => {
     expect(res1.body).toHaveProperty('errors.body.nome');
   });
 
-  it('Deve preencher os campos', async () => {
+  it('Deve preencher todos os campos', async () => {
     const res1 = await testServer
       .post('/cidades')
       .send({ nom: 'Caixa'});
