@@ -1,5 +1,13 @@
 import knex from 'knex';
+import pg from 'pg';
+import 'dotenv/config';
+
 import {development, production, test} from './Environment';
+
+if(process.env.NODE_ENV === 'production'){
+  //transform number like string in number
+  pg.types.setTypeParser(20, 'text', parseInt);
+}
 
 const getEnvironment = () =>{
   switch (process.env.NODE_ENV) {
